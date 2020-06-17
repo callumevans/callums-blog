@@ -4,7 +4,6 @@ import { normalize } from "styled-normalize";
 import { MobileSize } from "../style-variables";
 import Navigation from "./navigation";
 import SocialIcons from "./social-icons";
-import Selfie from "../../content/selfie.jpg";
 import Headshot from "./headshot";
 
 const GlobalStyles = createGlobalStyle`
@@ -30,27 +29,27 @@ const GlobalStyles = createGlobalStyle`
       }
       
       pre {
-          margin: 2.5em 0 !important;
-          font-size: 0.75em !important;
-          
-          @media (max-width: ${MobileSize}) {
-            font-size: 0.7em !important;
-          }   
-             
-          &::-webkit-scrollbar {
-            height: 6px;
-            width: 6px;
-          }
-    
-          &::-webkit-scrollbar-track {
-            border-radius: 10px;
-          }
-    
-          &::-webkit-scrollbar-thumb {
-            background: #b6b6b6;
-            border-radius: 10px;
-            margin: 1px;
-          }
+        margin: 2.5em 0 !important;
+        font-size: 0.75em !important;
+        
+        @media (max-width: ${MobileSize}) {
+          font-size: 0.7em !important;
+        }   
+         
+        &::-webkit-scrollbar {
+          height: 6px;
+          width: 6px;
+        }
+        
+        &::-webkit-scrollbar-track {
+          border-radius: 10px;
+        }
+        
+        &::-webkit-scrollbar-thumb {
+          background: #b6b6b6;
+          border-radius: 10px;
+          margin: 1px;
+        }
       }
       
       twitter-widget {

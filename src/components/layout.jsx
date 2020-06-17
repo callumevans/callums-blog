@@ -4,7 +4,7 @@ import { normalize } from "styled-normalize";
 import { MobileSize } from "../style-variables";
 import Navigation from "./navigation";
 import SocialIcons from "./social-icons";
-import Selfie from "../../content/selfie.jpg";
+import Headshot from "./headshot";
 
 const GlobalStyles = createGlobalStyle`
     ${normalize};
@@ -29,27 +29,27 @@ const GlobalStyles = createGlobalStyle`
       }
       
       pre {
-          margin: 2.5em 0 !important;
-          font-size: 0.75em !important;
-          
-          @media (max-width: ${MobileSize}) {
-            font-size: 0.7em !important;
-          }   
-             
-          &::-webkit-scrollbar {
-            height: 6px;
-            width: 6px;
-          }
-    
-          &::-webkit-scrollbar-track {
-            border-radius: 10px;
-          }
-    
-          &::-webkit-scrollbar-thumb {
-            background: #b6b6b6;
-            border-radius: 10px;
-            margin: 1px;
-          }
+        margin: 2.5em 0 !important;
+        font-size: 0.75em !important;
+        
+        @media (max-width: ${MobileSize}) {
+          font-size: 0.7em !important;
+        }   
+         
+        &::-webkit-scrollbar {
+          height: 6px;
+          width: 6px;
+        }
+        
+        &::-webkit-scrollbar-track {
+          border-radius: 10px;
+        }
+        
+        &::-webkit-scrollbar-thumb {
+          background: #b6b6b6;
+          border-radius: 10px;
+          margin: 1px;
+        }
       }
       
       twitter-widget {
@@ -58,17 +58,10 @@ const GlobalStyles = createGlobalStyle`
   }
 `;
 
-const Headshot = styled.img`
-  width: 11em;
-  border-radius: 100%;
-  filter: grayscale(1);
+const HeadshotPicture = styled(props => <div {...props}><Headshot /></div>)`
   display: block;
-  margin: 3em auto;
-  
-  @media (max-width: ${MobileSize}) {
-    width: 8em;
-    margin: 1em auto;
-  }      
+  margin: 2.5em auto;
+  text-align: center;
 `;
 
 const Social = styled(props => <div {...props}><SocialIcons /></div>)`
@@ -89,7 +82,7 @@ const Content = styled.main`
 export default function Layout({ location, title, children }) {
     return (
         <>
-            <Headshot src={Selfie} />
+            <HeadshotPicture />
             <GlobalStyles />
             <Social />
             <Nav />

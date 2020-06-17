@@ -5,6 +5,7 @@ import { MobileSize } from "../style-variables";
 import Navigation from "./navigation";
 import SocialIcons from "./social-icons";
 import Selfie from "../../content/selfie.jpg";
+import Headshot from "./headshot";
 
 const GlobalStyles = createGlobalStyle`
     ${normalize};
@@ -58,17 +59,10 @@ const GlobalStyles = createGlobalStyle`
   }
 `;
 
-const Headshot = styled.img`
-  width: 176px;
-  border-radius: 100%;
-  filter: grayscale(1);
+const HeadshotPicture = styled(props => <div {...props}><Headshot /></div>)`
   display: block;
-  margin: 3em auto;
-  
-  @media (max-width: ${MobileSize}) {
-    width: 108px;
-    margin: 1em auto;
-  }      
+  margin: 2.5em auto;
+  text-align: center;
 `;
 
 const Social = styled(props => <div {...props}><SocialIcons /></div>)`
@@ -89,7 +83,7 @@ const Content = styled.main`
 export default function Layout({ location, title, children }) {
     return (
         <>
-            <Headshot alt="Callum Evans" src={Selfie} />
+            <HeadshotPicture />
             <GlobalStyles />
             <Social />
             <Nav />

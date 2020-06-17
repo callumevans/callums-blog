@@ -78,5 +78,8 @@ module.exports = {
                 lang: 'en'
             }
         },
+        {
+            resolve: `gatsby-plugin-styled-components`,
+        },
     ]
 };

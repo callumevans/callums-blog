@@ -59,14 +59,14 @@ const GlobalStyles = createGlobalStyle`
 `;
 
 const Headshot = styled.img`
-  width: 11em;
+  width: 176px;
   border-radius: 100%;
   filter: grayscale(1);
   display: block;
   margin: 3em auto;
   
   @media (max-width: ${MobileSize}) {
-    width: 8em;
+    width: 108px;
     margin: 1em auto;
   }      
 `;

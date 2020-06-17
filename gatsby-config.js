@@ -72,5 +72,11 @@ module.exports = {
                 policy: [{ userAgent: '*', allow: '/' }]
             }
         },
+        {
+            resolve: `gatsby-plugin-html-attributes`,
+            options: {
+                lang: 'en'
+            }
+        },
     ]
 };

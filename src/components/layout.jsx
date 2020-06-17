@@ -89,7 +89,7 @@ const Content = styled.main`
 export default function Layout({ location, title, children }) {
     return (
         <>
-            <Headshot src={Selfie} />
+            <Headshot alt="Callum Evans" src={Selfie} />
             <GlobalStyles />
             <Social />
             <Nav />

@@ -33,7 +33,7 @@ const SocialIcon = styled.a`
 `;
 
 function HoverableIcon({ colour, url, icon, label }) {
-    return <SocialIcon colour={colour} href={url}><FontAwesomeIcon aria-label={label} icon={icon} /></SocialIcon>;
+    return <SocialIcon colour={colour} href={url}><FontAwesomeIcon title={label} icon={icon} /></SocialIcon>;
 }
 
 export default function SocialIcons() {

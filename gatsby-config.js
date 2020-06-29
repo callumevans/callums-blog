@@ -1,7 +1,9 @@
+const SiteConfig = require('./site-config.js');
+
 module.exports = {
     siteMetadata: {
         title: "Callum's Blog",
-        siteUrl: "https://www.callums.blog",
+        siteUrl: `${SiteConfig.SiteUrl}`,
     },
     plugins: [
         {
@@ -33,7 +35,7 @@ module.exports = {
                 openGraph: {
                     type: 'website',
                     locale: 'en_GB',
-                    url: 'https://www.callums.blog/',
+                    url: `${SiteConfig.SiteUrl}`,
                     site_name: `Callum's Blog`,
                 },
                 twitter: {
@@ -67,8 +69,8 @@ module.exports = {
         {
             resolve: `gatsby-plugin-robots-txt`,
             options: {
-                host: 'https://www.callums.blog',
-                sitemap: 'https://www.callums.blog/sitemap.xml',
+                host: `${SiteConfig.SiteUrl}`,
+                sitemap: `${SiteConfig.SiteUrl}/sitemap.xml`,
                 policy: [{ userAgent: '*', allow: '/' }]
             }
         },
@@ -83,6 +85,12 @@ module.exports = {
         },
         {
             resolve: `gatsby-plugin-react-helmet-async`,
+        },
+        {
+            resolve: `gatsby-plugin-canonical-urls`,
+            options: {
+                siteUrl: `${SiteConfig.SiteUrl}`,
+            },
         },
     ]
 };

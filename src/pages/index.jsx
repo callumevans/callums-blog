@@ -6,6 +6,7 @@ import styled from "styled-components";
 import Post from "../components/post";
 import { FontSize } from "../style-variables";
 import { GatsbySeo } from "gatsby-plugin-next-seo/lib";
+import SiteConfig from "../../site-config";
 
 const PostSummary = styled(props => <Link {...props} />)`
   cursor: pointer;
@@ -36,9 +37,9 @@ export default function IndexPage({ data, location }) {
             />
             <BlogJsonLd
                 title={"Callum's Blog"}
-                url={"https://www.callums.blog"}
+                url={SiteConfig.SiteUrl}
                 description={"The blog of Callum Evans. Rambling about programming, software design, development practices and other related things."}
-                canonical={"https://www.callums.blog"}
+                canonical={SiteConfig.SiteUrl}
                 posts={posts.map(mapPostToBlogJsonLd)}
             />
 

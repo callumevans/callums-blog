@@ -4,6 +4,7 @@ import { BlogPostJsonLd } from 'gatsby-plugin-next-seo';
 import Layout from "../components/layout";
 import Post from "../components/post";
 import { GatsbySeo } from "gatsby-plugin-next-seo/lib";
+import SiteConfig from "../../site-config";
 
 export default function BlogPost({ data, pageContext, location }) {
     const post = data.markdownRemark;
@@ -16,7 +17,7 @@ export default function BlogPost({ data, pageContext, location }) {
             />
             <BlogPostJsonLd
                 headline={`${post.frontmatter.title}`}
-                url={`https://www.callums.blog${post.fields.slug}`}
+                url={`${SiteConfig.SiteUrl}${post.fields.slug}`}
                 description={post.frontmatter.description}
                 authorName={"Callum Evans"}
                 datePublished={post.frontmatter.date}

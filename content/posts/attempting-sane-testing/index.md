@@ -122,7 +122,7 @@ Nonetheless, when I began approaching tests like this a lot of things immediatel
 
 One might find some benefit in questioning the difference between unit and integration tests. At face-value, it seems reasonable to separate out these apparently distinct types of tests. But try asking people for consistent or meaningful definitions of the two and you're likely to run into some curious inconsistencies: "_Integration tests are when you're testing more than one class_", "_Integration tests cross module boundaries_", "_Integration tests talk to real systems_", "_Integration tests are slow_", "_Integration tests are not deterministic_". This might become problematic when you come across ideas that consider integration tests to be something unto themselves.
 
-<blockquote class="twitter-tweet" data-lang="en">
+<blockquote class="twitter-tweet tw-align-center" data-lang="en">
     <p lang="en" dir="ltr">Write tests. Not too many. Mostly integration.</p>&mdash; Guillermo Rauch (@rauchg)
     <a href="https://twitter.com/rauchg/status/807626710350839808?ref_src=twsrc%5Etfw">December 10, 2016</a>
 </blockquote>

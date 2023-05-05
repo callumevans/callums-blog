@@ -1,0 +1,31 @@
+---
+import "@fontsource/scope-one"
+import Headshot from "../components/Headshot.astro";
+---
+<html lang="en">
+    <head>
+        <title>Callum's Blog</title>
+    </head>
+    <body>
+        <div id="HeadContent">
+            <Headshot />
+            <SocialNav />
+        </div>
+        <slot/>
+    </body>
+</html>
+
+<style>
+    body {
+        background: rgb(245, 245, 245);
+        font-family: "Scope One", serif;
+        font-size: 1.3rem;
+        line-height: 1.5rem;
+        padding: 1em 0;
+    }
+
+    #HeadContent {
+        display: flex;
+        justify-content: center;
+    }
+</style>

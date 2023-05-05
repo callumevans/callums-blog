@@ -1,0 +1,16 @@
+---
+import ProfilePictureWebp from "../assets/profile_picture.webp";
+import ProfilePictureJpeg from "../assets/profile_picture.jpeg";
+---
+<picture>
+    <source srcset={ProfilePictureWebp.src} width={176} height={176} type="image/webp" />
+    <source srcset={ProfilePictureJpeg.src} width={176} height={176} type="image/jpeg" />
+    <img src={ProfilePictureJpeg.src} width={176} height={176} />
+</picture>
+
+<style>
+    img {
+        border-radius: 100%;
+        filter: grayscale(100%)
+    }
+</style>

@@ -1,0 +1,16 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Headhsot from "../components/Headshot.astro";
+
+let allPosts = await Astro.glob("/posts/*.md")
+---
+<BaseLayout>
+	{allPosts.map((post) => {
+		return (
+			<p>POST: {post.frontmatter.excerpt}</p>
+		)
+	})}
+</BaseLayout>
+
+<style>
+</style>

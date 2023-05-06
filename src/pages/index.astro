@@ -6,7 +6,7 @@ let allPosts = (await Astro.glob("/posts/*.md"))
     .sort((a, b) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf());
 
 ---
-<BaseLayout>
+<BaseLayout description="Enjoy my pointless, sweary rants about software development.">
 	{allPosts.map((post) => {
 		return (
             <a href={`/${post.frontmatter.slug}`}>

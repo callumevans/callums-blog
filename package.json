@@ -10,8 +10,9 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@fontsource/scope-one": "4.5.10",
+    "@astrojs/sitemap": "^1.3.0",
     "@fontsource/arvo": "4.5.7",
+    "@fontsource/scope-one": "4.5.10",
     "astro": "2.3.2",
     "astro-icon": "^0.8.0",
     "dayjs": "^1.11.7"

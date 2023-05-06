@@ -4,14 +4,16 @@ import "@fontsource/arvo";
 import Headshot from "@components/Headshot.astro";
 import SocialNav from "@components/SocialNav.astro";
 
-const { subtitle } = Astro.props;
-
+const { subtitle, description } = Astro.props;
+const title = `Callum's Blog{subtitle ? ` | ${subtitle}` : ''}`
 ---
 <html lang="en">
     <head>
-        <title>Callum's Blog{subtitle ? ` | ${subtitle}` : ''}</title>
+        <title>{title}</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="title" content={title} />
+        { description && <meta name="description" content={description} /> }
     </head>
     <body>
         <div id="HeadContent">

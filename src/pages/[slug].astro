@@ -2,7 +2,7 @@
 import BaseLayout from "@layouts/BaseLayout.astro";
 import Post from "@components/Post.astro";
 const { Content, frontmatter } = Astro.props.post;
-const { title, date } = frontmatter;
+const { title, date, description } = frontmatter;
 
 export async function getStaticPaths() {
     const posts = await Astro.glob("/posts/*.md");
@@ -13,7 +13,7 @@ export async function getStaticPaths() {
     }))
 }
 ---
-<BaseLayout subtitle={title}>
+<BaseLayout subtitle={title} description={description}>
     <Post title={title} date={date}>
         <Content />
     </Post>

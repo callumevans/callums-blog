@@ -4,8 +4,8 @@ import { Icon } from "astro-icon";
 const { href, icon, alt, hoverColour } = Astro.props;
 ---
 
-<a href={href}>
-    <Icon name={icon} />
+<a href={href} aria-label={alt}>
+    <Icon alt={alt} name={icon} />
 </a>
 
 <style define:vars={{ hoverColour }}>

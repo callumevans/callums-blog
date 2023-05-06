@@ -1,0 +1,49 @@
+---
+import dayjs from "dayjs";
+const { title, date } = Astro.props;
+---
+<article>
+    <header>
+        <h2>{title}</h2>
+        <time>{dayjs(date).format('DD MMMM, YYYY')}</time>
+    </header>
+    <slot />
+</article>
+
+<style>
+    article > header > h2 {
+        font-size: 1.8em;
+        text-align: center;
+        margin: 1em 0 .5em 0;
+    }
+
+    article > header > time {
+        text-align: center;
+        display: block;
+        font-style: italic;
+        margin-bottom: 1.5em;
+    }
+</style>
+
+<style is:inline>
+    article > p > a {
+        color: rgb(30, 128, 200);
+    }
+
+    article > p > a:hover {
+        color: rgb(68, 161, 231);
+    }
+
+    article > pre {
+        font-size: .9em;
+        border-radius: 8px;
+        padding: 14px;
+        line-height: 1rem;
+
+        @media (min-width: 600px) {
+            padding: 18px;
+            font-size: .9em;
+            line-height: 1.3em;
+        }
+    }
+</style>

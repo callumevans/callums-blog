@@ -1,3 +1,19 @@
 ---
-
+import SocialIcon from "@components/SocialIcon.astro";
 ---
+<div>
+    <SocialIcon href="https://twitter.com/callum_evans" icon="twitter" alt="Twitter" hoverColour="#00aced" />
+    <SocialIcon href="https://github.com/callumevans" icon="github" alt="GitHub" hoverColour="#4e4e4e" />
+    <SocialIcon href="https://www.linkedin.com/in/callum-evans" icon="linkedin" alt="LinkedIn" hoverColour="#007bb6" />
+    <SocialIcon href="https://stackoverflow.com/users/2850457/callum-evans" icon="stackoverflow" alt="Stackoverflow" hoverColour="#ff9900" />
+</div>
+
+<style>
+    div {
+        display: flex;
+
+        > * {
+            margin: 0 14px;
+        }
+    }
+</style>

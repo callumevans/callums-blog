@@ -1,16 +1,42 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import Headhsot from "../components/Headshot.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import Post from "@components/Post.astro";
 
-let allPosts = await Astro.glob("/posts/*.md")
+let allPosts = (await Astro.glob("/posts/*.md"))
+    .sort((a, b) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf());
+
 ---
 <BaseLayout>
 	{allPosts.map((post) => {
 		return (
-			<p>POST: {post.frontmatter.excerpt}</p>
+            <a href={`/${post.frontmatter.slug}`}>
+                <Post title={post.frontmatter.title} date={post.frontmatter.date}>
+                    <p>{post.frontmatter.description}</p>
+                </Post>
+                <span class="read-more">Read more...</span>
+            </a>
 		)
 	})}
 </BaseLayout>
 
 <style>
+    a {
+        display: block;
+        margin-bottom: 5em;
+        text-decoration: none;
+        color: inherit;
+    }
+
+    a:hover {
+        text-decoration: underline;
+        text-decoration-color: #cfcfcf;
+    }
+
+    a:visited {
+        color: inherit;
+    }
+
+    .read-more {
+        font-style: italic;
+    }
 </style>

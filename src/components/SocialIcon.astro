@@ -1,0 +1,27 @@
+---
+import { Icon } from "astro-icon";
+
+const { href, icon, alt, hoverColour } = Astro.props;
+---
+
+<a href={href}>
+    <Icon name={icon} />
+</a>
+
+<style define:vars={{ hoverColour }}>
+    a {
+        text-decoration: none;
+
+        > svg {
+            width: 25px;
+            fill: black;
+        }
+    }
+
+    a:hover {
+        > svg {
+            transition: fill .1s linear;
+            fill: var(--hoverColour);
+        }
+    }
+</style>

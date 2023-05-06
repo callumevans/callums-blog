@@ -1,17 +1,29 @@
 ---
 import "@fontsource/scope-one"
-import Headshot from "../components/Headshot.astro";
+import "@fontsource/arvo";
+import Headshot from "@components/Headshot.astro";
+import SocialNav from "@components/SocialNav.astro";
+
+const { subtitle } = Astro.props;
+
 ---
 <html lang="en">
     <head>
-        <title>Callum's Blog</title>
+        <title>Callum's Blog{subtitle ? ` | ${subtitle}` : ''}</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     </head>
     <body>
         <div id="HeadContent">
             <Headshot />
             <SocialNav />
+            <nav>
+                <a href="/">Home</a>
+            </nav>
         </div>
-        <slot/>
+        <main>
+            <slot />
+        </main>
     </body>
 </html>
 
@@ -19,13 +31,47 @@ import Headshot from "../components/Headshot.astro";
     body {
         background: rgb(245, 245, 245);
         font-family: "Scope One", serif;
-        font-size: 1.3rem;
-        line-height: 1.5rem;
-        padding: 1em 0;
+        line-height: 1.6em;
+        margin: 0;
+        font-size: 1.05em;
+        padding: 1.3em 1.7em;
+
+        @media (min-width: 600px) {
+            font-size: 1.32em;
+            padding: 2.3em 1em;
+        }
     }
 
     #HeadContent {
-        display: flex;
+        display: grid;
+        grid-template-rows: auto auto;
+        grid-row-gap: 1.5rem;
+        margin: 0 auto;
         justify-content: center;
+        text-align: center;
+    }
+
+    nav {
+        font-family: "Arvo", serif;
+        font-weight: bold;
+        font-size: 1.35em;
+
+        > a {
+            text-decoration: none;
+        }
+
+        > a:hover {
+            text-decoration: underline;
+            color: inherit;
+        }
+
+        > a:visited {
+            color: inherit;
+        }
+    }
+
+    main {
+        margin: 3.6em auto;
+        max-width: 32em;
     }
 </style>

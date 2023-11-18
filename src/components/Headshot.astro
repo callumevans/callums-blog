@@ -4,7 +4,9 @@ import ProfilePictureWebp from "@assets/profile_picture.webp";
 
 const { smallHeader } = Astro.props;
 ---
-<Image transition:animate="none" class={smallHeader ? 'smallHeader' : ''} src={ProfilePictureWebp} alt="Callum Evans" />
+<div>
+    <Image transition:animate="none" class={smallHeader ? 'smallHeader' : ''} src={ProfilePictureWebp} alt="Callum Evans" />
+</div>
 
 <style>
     img {

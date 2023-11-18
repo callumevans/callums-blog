@@ -6,7 +6,6 @@ import SocialNav from "@components/SocialNav.astro";
 
 const { subtitle, description } = Astro.props;
 const title = `Callum's Blog${subtitle ? ` | ${subtitle}` : ''}`
-
 ---
 <html lang="en">
     <head>
@@ -14,6 +13,7 @@ const title = `Callum's Blog${subtitle ? ` | ${subtitle}` : ''}`
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="title" content={title} />
+        <link rel="sitemap" href="/sitemap-index.xml" />
         { description && <meta name="description" content={description} /> }
     </head>
     <body>

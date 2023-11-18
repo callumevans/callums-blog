@@ -1,12 +1,10 @@
 ---
+import { Image } from "astro:assets";
 import ProfilePictureWebp from "@assets/profile_picture.webp";
-import ProfilePictureJpeg from "@assets/profile_picture.jpeg";
+
+const { smallHeader } = Astro.props;
 ---
-<picture>
-    <source srcset={ProfilePictureWebp.src} type="image/webp" />
-    <source srcset={ProfilePictureJpeg.src} type="image/jpeg" />
-    <img width="176" height="176" src={ProfilePictureJpeg.src} alt="Callum Evans" />
-</picture>
+<Image transition:animate="none" class={smallHeader ? 'smallHeader' : ''} src={ProfilePictureWebp} alt="Callum Evans" />
 
 <style>
     img {
@@ -14,9 +12,19 @@ import ProfilePictureJpeg from "@assets/profile_picture.jpeg";
         width: 120px;
         height: 120px;
 
+        &.smallHeader {
+            width: 77px;
+            height: 77px;
+        }
+
         @media (min-width: 600px) {
             width: 176px;
             height: 176px;
+
+            &.smallHeader {
+                width: 77px;
+                height: 77px;
+            }
         }
     }
 </style>

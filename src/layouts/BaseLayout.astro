@@ -19,7 +19,7 @@ const title = `Callum's Blog${subtitle ? ` | ${subtitle}` : ''}`
         <ViewTransitions />
     </head>
     <body>
-    <div id="HeadContent" transition:name="HeadContent">
+    <div id="HeadContent" transition:animate="none" transition:name="HeadContent">
         <Headshot smallHeader={smallHeader} />
         <SocialNav />
         <nav>

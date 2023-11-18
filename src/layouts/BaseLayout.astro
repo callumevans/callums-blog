@@ -3,9 +3,8 @@ import "@fontsource/scope-one"
 import "@fontsource/arvo";
 import Headshot from "@components/Headshot.astro";
 import SocialNav from "@components/SocialNav.astro";
-import { ViewTransitions } from 'astro:transitions';
 
-const { subtitle, description, smallHeader } = Astro.props;
+const { subtitle, description } = Astro.props;
 const title = `Callum's Blog${subtitle ? ` | ${subtitle}` : ''}`
 
 ---
@@ -16,17 +15,16 @@ const title = `Callum's Blog${subtitle ? ` | ${subtitle}` : ''}`
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="title" content={title} />
         { description && <meta name="description" content={description} /> }
-        <ViewTransitions />
     </head>
     <body>
-    <div id="HeadContent" transition:animate="none" transition:name="HeadContent">
-        <Headshot smallHeader={smallHeader} />
+    <div id="HeadContent">
+        <Headshot />
         <SocialNav />
         <nav>
             <a href="/">Home</a>
         </nav>
     </div>
-        <main transition:animate="initial" transition:name="MainContent">
+        <main>
             <slot />
         </main>
     </body>

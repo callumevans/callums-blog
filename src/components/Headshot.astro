@@ -1,12 +1,10 @@
 ---
+import { Image } from "astro:assets";
 import ProfilePictureWebp from "@assets/profile_picture.webp";
-import ProfilePictureJpeg from "@assets/profile_picture.jpeg";
 ---
-<picture>
-    <source srcset={ProfilePictureWebp.src} type="image/webp" />
-    <source srcset={ProfilePictureJpeg.src} type="image/jpeg" />
-    <img width="176" height="176" src={ProfilePictureJpeg.src} alt="Callum Evans" />
-</picture>
+<div>
+    <Image src={ProfilePictureWebp} alt="Callum Evans" />
+</div>
 
 <style>
     img {

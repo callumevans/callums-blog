@@ -13,7 +13,7 @@ export async function getStaticPaths() {
     }))
 }
 ---
-<BaseLayout subtitle={title} description={description}>
+<BaseLayout smallHeader={true} subtitle={title} description={description}>
     <Post title={title} date={date}>
         <Content />
     </Post>

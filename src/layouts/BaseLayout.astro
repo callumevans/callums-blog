@@ -3,6 +3,7 @@ import "@fontsource/scope-one"
 import "@fontsource/arvo";
 import Headshot from "@components/Headshot.astro";
 import SocialNav from "@components/SocialNav.astro";
+import { ViewTransitions } from "astro:transitions";
 
 const { subtitle, description } = Astro.props;
 const title = `Callum's Blog${subtitle ? ` | ${subtitle}` : ''}`
@@ -15,16 +16,17 @@ const title = `Callum's Blog${subtitle ? ` | ${subtitle}` : ''}`
         <meta name="title" content={title} />
         <link rel="sitemap" href="/sitemap-index.xml" />
         { description && <meta name="description" content={description} /> }
+        <ViewTransitions />
     </head>
     <body>
-    <div id="HeadContent">
-        <Headshot />
-        <SocialNav />
-        <nav>
-            <a href="/">Home</a>
-        </nav>
-    </div>
-        <main>
+        <div id="HeadContent" transition:animate="none">
+            <Headshot />
+            <SocialNav />
+            <nav>
+                <a href="/">Home</a>
+            </nav>
+        </div>
+        <main transition:animate="none">
             <slot />
         </main>
     </body>
